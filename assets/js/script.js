@@ -1,26 +1,37 @@
 var main = function() {
 
-	$('section').click(function() {
-	    $('.section').removeClass('current');
-	    $('.section').addClass('hover');    
-	    $('.description').hide();
+	var description = $('.description');
 
-	    $(this).removeClass('hover'); 
-	    $(this).addClass('current');
-	    $(this).children('.description').show();
+description.hide();
+	var selected = $('.list').find('.selected');
 
-	    
+	function showDesc( selected ) {
 
+		if ( selected.length ) {
+			var id = selected.find('a').attr('href');
+			selectedDesc = $(id);
+		} 
+
+		var newDesc = selectedDesc.length ?  selectedDesc : description.eq(0);
+
+		description.not( newDesc ).hide();
+		
+		newDesc.fadeIn(500);
+	}
+
+	showDesc( selected );
+
+
+	$('.list li').on('click', function(event) {
+
+		$(this).addClass('selected')
+			.siblings().removeClass('selected');
+
+		showDesc( $(this) );
+		event.preventDefault();
 	});
 
-
-
-
-
-	$('.btn').click(function() {
-	$('<li>').text('New item').appendTo('.items');
-	});
-
+	
 
 };
 
