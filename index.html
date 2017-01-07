@@ -2,13 +2,24 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>My Links</title>
 		<link rel="stylesheet"  href="assets/css/normalize.css">
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+
+        <link rel="stylesheet"  href="assets/css/bootstrap-theme.css">
 		<link rel="stylesheet"  href="assets/css/style.css">	
 
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
 		<script src="assets/js/script.js"></script>
 
 		<!--[if lt IE 9]>
@@ -19,126 +30,143 @@
 	</head>
 
 	<body>
-		<header>
-			<div class="logo">
-				<h1>MyLinks</h1>
-			</div>
+<div class="container-fluid">
+        <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">MyLinks</a>
+    </div>
 
-           <div class="add">
-               <form id="add-form" action="#" method="post">
-                    <input class="form-control" id="text" type="text" name="message" >
-                    <select class="kat" name="Kategória">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      <form class="navbar-form navbar-left form-inline" id="add-form" action="#" method="post">
+        <div class="form-group">
+          <input class="form-control" placeholder="Vlož link" id="text" type="text" name="message">
+        </div>
+        <select class="form-control" name="Kategória">
                         <option value="rôzne">Rôzne</option>
                         <option value="rôzne">Rôzne</option>
                         <option value="rôzne">Rôzne</option>
                         <option value="rôzne">Rôzne</option>
                     </select>
-                    <input class="button" type="submit" value="Pridaj link">
-                </form>  
-            </div>
+        <button type="submit" class="btn btn-default" >Pridaj</button>
+       <!-- <input class="button" type="submit" value="Pridaj link">-->
+      </form>      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Meno Priezvisko</a></li>
+ 
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
-			<div class="name">Terka Dujavova</div>
-		</header>
 
-		<div class="container group">
-		<div class="list">
-			<ul>
+	<div class="row">
+		<div class="list-group list col-sm-3">
+			
             <h2>Kategória:</h2>
-				<li class="selected"><a href="#desc1">CSS frameworks</a></li>
-				<li><a href="#desc2">CSS generator</a></li>
-				<li><a href="#desc3">knihy</a></li>
-				<li><a href="#desc4">obrazky</a></li>
-				<li><a href="#desc5">ikonky</a></li>
-			</ul>
+				<a class="list-group-item active" href="#desc1">CSS frameworks</a>
+				<a class="list-group-item" href="#desc2">CSS generator</a>
+				<a class="list-group-item" href="#desc3">knihy</a>
+				<a class="list-group-item" href="#desc4">obrazky</a>
+				<a class="list-group-item" href="#desc5">ikonky</a>
+			
 		</div>
 
 
 		
        
-        <div id="desc1" class="description">
-        <h2>CSS frameworks</h2>
-    		<ul>
-    			<li><a href="http://getbootstrap.com/">Bootstrap</a></li>
-                <li><a href="http://tomasjanecek.cz/clanky/post/seznam-trid-bootstrap-3-i-s-popisem">(Bootstrap CZ popis)</a></li>
-    			<li><a href="http://foundation.zurb.com/">Foundation</a></li>
-    			<li><a href="http://purecss.io/">Pure</a></li>
-    			<li><a href="http://topcoat.io/">Topcoat</a></li>
-    			<li><a href="http://codyhouse.co/">CODYHOUSE - A free library of HTML, CSS, JS nuggets</a></li>
-                <li><a href="http://foundation.zurb.com/">nieco</a></li>
-                <li><a href="http://www.jonikorpi.com/less-framework/">Less Framework 4</a></li>
-                <li><a href="">nieco</a></li>
+        <div id="desc1" class="panel panel-primary col-sm-8 description">
+        <h2 class="panel-heading">CSS frameworks</h2>
+    		<ul class="list-group">
+    			<li class="list-group-item"><a href="http://getbootstrap.com/">Bootstrap</a></li>
+                <li class="list-group-item"><a href="http://tomasjanecek.cz/clanky/post/seznam-trid-bootstrap-3-i-s-popisem">(Bootstrap CZ popis)</a></li>
+    			<li class="list-group-item"><a href="http://foundation.zurb.com/">Foundation</a></li>
+    			<li class="list-group-item"><a href="http://purecss.io/">Pure</a></li>
+    			<li class="list-group-item"><a href="http://topcoat.io/">Topcoat</a></li>
+    			<li class="list-group-item"><a href="http://codyhouse.co/">CODYHOUSE - A free library of HTML, CSS, JS nuggets</a></li>
+                <li class="list-group-item"><a href="http://foundation.zurb.com/">nieco</a></li>
+                <li class="list-group-item"><a href="http://www.jonikorpi.com/less-framework/">Less Framework 4</a></li>
+                <li class="list-group-item"><a href="">nieco</a></li>
                 
     		</ul>
             </div>
-    	   	
 
     	
 
-            <div id="desc2" class="description">
-            <h2>CSS generator</h2>
-    		<ul>
-    			<li><a href="http://www.gradient-animator.com/">GRADIENT ANIMATOR </a></li>
-    			<li><a href="http://www.colorzilla.com/gradient-editor/">Gradient Generator </a></li>
-    			<li><a href="http://css3buttongenerator.com/">button generator </a></li>
-    			<li><a href="http://border-image.com/#%7B%22src%22%3A%22http%3A%2F%2Fwww.w3.org%2FTR%2Fcss3-background%2Fborder.png%22%2C%22linkBorder%22%3Atrue%2C%22borderWidth%22%3A%5B0%2C0%2C0%2C0%5D%2C%22imageOffset%22%3A%5B27%2C27%2C27%2C27%5D%2C%22fill%22%3Atrue%2C%22setRepat%22%3Afalse%2C%22repeat%22%3A%5B%22repeat%22%2C%22repeat%22%5D%2C%22scaleFactor%22%3A3%2C%22setRepeat%22%3Atrue%7D">border image </a></li>  
-    			<li><a href=" http://howtocenterincss.com/">HOW TO CENTER IN CSS</a></li>
-                <li><a href="http://matthewlein.com/ceaser/">transition</a></li>
-                <li><a href="http://css3generator.com/">CSS3 generator</a></li> 
-                <li><a href="http://the-echoplex.net/flexyboxes/">flexbox playground and code generator</a></li>
-                <li><a href="http://www.cssmatic.com/">CSSmatic</a></li>
-                <li><a href="http://www.css3factory.com/linear-gradients/">CSS Gradient Generator</a></li>                
-                <li><a href="">nieco</a></li>
+            <div id="desc2" class="panel panel-primary col-sm-8 description">
+            <h2 class="panel-heading">CSS generator</h2>
+    		<ul class="list-group">
+    			<li class="list-group-item"><a href="http://www.gradient-animator.com/">GRADIENT ANIMATOR </a></li>
+    			<li class="list-group-item"><a href="http://www.colorzilla.com/gradient-editor/">Gradient Generator </a></li>
+    			<li class="list-group-item"><a href="http://css3buttongenerator.com/">button generator </a></li>
+    			<li class="list-group-item"><a href="http://border-image.com/#%7B%22src%22%3A%22http%3A%2F%2Fwww.w3.org%2FTR%2Fcss3-background%2Fborder.png%22%2C%22linkBorder%22%3Atrue%2C%22borderWidth%22%3A%5B0%2C0%2C0%2C0%5D%2C%22imageOffset%22%3A%5B27%2C27%2C27%2C27%5D%2C%22fill%22%3Atrue%2C%22setRepat%22%3Afalse%2C%22repeat%22%3A%5B%22repeat%22%2C%22repeat%22%5D%2C%22scaleFactor%22%3A3%2C%22setRepeat%22%3Atrue%7D">border image </a></li>  
+    			<li class="list-group-item"><a href=" http://howtocenterincss.com/">HOW TO CENTER IN CSS</a></li>
+                <li class="list-group-item"><a href="http://matthewlein.com/ceaser/">transition</a></li>
+                <li class="list-group-item"><a href="http://css3generator.com/">CSS3 generator</a></li> 
+                <li class="list-group-item"><a href="http://the-echoplex.net/flexyboxes/">flexbox playground and code generator</a></li>
+                <li class="list-group-item"><a href="http://www.cssmatic.com/">CSSmatic</a></li>
+                <li class="list-group-item"><a href="http://www.css3factory.com/linear-gradients/">CSS Gradient Generator</a></li>                
+                <li class="list-group-item"><a href="">nieco</a></li>
 
     		</ul>
             </div>
     	
     	
     	
-            <div id="desc3" class="description">
-            <h2>knihy</h2>
-    		<ul>
-    			<li><a href="http://static.googleusercontent.com/media/www.google.com/en//intl/ALL_ALL/think/multiscreen/pdf/multi-screen-moblie-whitepaper_research-studies.pdf">PRINCIPLES OF MOBILE SITE DESIGN </a></li>
-                <li><a href="https://word.office.live.com/wv/WordView.aspx?FBsrc=http%3A%2F%2Fwww.facebook.com%2Fattachments%2Fdoc_preview.php%3Fid%3D765145016930923%26metadata&access_token=100000344470604%3AAQCNDzn8f2JZq33Y">Programovanie pre 2. ročník - teória</a></li>
-                <li><a href="https://typekit.files.wordpress.com/2016/04/combiningtypefaces.pdf">Combining typefaces</a></li>
-                <li><a href="">nieco</a></li>
+            <div id="desc3" class="panel panel-primary col-sm-8 description">
+            <h2 class="panel-heading">knihy</h2>
+    		<ul class="list-group">
+    			<li class="list-group-item"><a href="http://static.googleusercontent.com/media/www.google.com/en//intl/ALL_ALL/think/multiscreen/pdf/multi-screen-moblie-whitepaper_research-studies.pdf">PRINCIPLES OF MOBILE SITE DESIGN </a></li>
+                <li class="list-group-item"><a href="https://word.office.live.com/wv/WordView.aspx?FBsrc=http%3A%2F%2Fwww.facebook.com%2Fattachments%2Fdoc_preview.php%3Fid%3D765145016930923%26metadata&access_token=100000344470604%3AAQCNDzn8f2JZq33Y">Programovanie pre 2. ročník - teória</a></li>
+                <li class="list-group-item"><a href="https://typekit.files.wordpress.com/2016/04/combiningtypefaces.pdf">Combining typefaces</a></li>
+                <li class="list-group-item"><a href="">nieco</a></li>
     		</ul>
             </div>
     	
 
 
         
-            <div id="desc4" class="description">
-            <h2>obrazky</h2>
-            <ul>
-                <li><a href="http://www.freepik.com/">Freepik</a></li>  
-                <li><a href="https://www.websupport.sk/blog/2016/02/kde-najst-obrazky-zadarmo-pre-vas-web/">Kde nájsť obrázky zadarmo pre váš web (článok SK)</a></li> 
-                <li><a href="http://www.1001freedownloads.com/">Download Free Vectors, Photos, Icons, PSDs and more</a></li>
-                <li><a href="http://subtlepatterns.com">free textures for web</a></li> 
-                <li><a href="http://grafika.sk/clanok/free-fotobanky-nekradnut-obrazky/">Free fotobanky – ako nekradnúť obrázky</a></li>
-                <li><a href="http://sketcher.sk/60-patternov-a-textur-pre-photoshop-zadarmo/">60 vysoko kvalitných patternov a textúr pre Photoshop, ktoré sú zadarmo</a></li>
-                <li><a href="">nieco</a></li>
+            <div id="desc4" class="panel panel-primary col-sm-8 description">
+            <h2 class="panel-heading">obrazky</h2>
+            <ul class="list-group">
+                <li class="list-group-item"><a href="http://www.freepik.com/">Freepik</a></li>  
+                <li class="list-group-item"><a href="https://www.websupport.sk/blog/2016/02/kde-najst-obrazky-zadarmo-pre-vas-web/">Kde nájsť obrázky zadarmo pre váš web (článok SK)</a></li> 
+                <li class="list-group-item"><a href="http://www.1001freedownloads.com/">Download Free Vectors, Photos, Icons, PSDs and more</a></li>
+                <li class="list-group-item"><a href="http://subtlepatterns.com">free textures for web</a></li> 
+                <li class="list-group-item"><a href="http://grafika.sk/clanok/free-fotobanky-nekradnut-obrazky/">Free fotobanky – ako nekradnúť obrázky</a></li>
+                <li class="list-group-item"><a href="http://sketcher.sk/60-patternov-a-textur-pre-photoshop-zadarmo/">60 vysoko kvalitných patternov a textúr pre Photoshop, ktoré sú zadarmo</a></li>
+                <li class="list-group-item"><a href="">nieco</a></li>
             </ul>
             </div>
         
 
-            <div id="desc5" class="description">
-            <h2>ikonky</h2>
-            <ul>
-                <li><a href="http://www.flaticon.com/">Flaticon</a></li>
-                <li><a href="https://github.com/saeedalipoor/icono">Icono - ikonky s CSS</a></li> 
-                <li><a href="https://www.iconfinder.com/">Iconfinde</a></li> 
-                <li><a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome - The iconic font and CSS toolkit</a></li>
-                <li><a href="http://fontawesome.io/">Font Awesome</a></li>
-                <li><a href="https://icomoon.io/app/#/select">nieco</a></li>
-                <li><a href="http://blog.invisionapp.com/free-graphic-design-icons/">DOWNLOAD 36 FLAT GRAPHIC DESIGN ICONS—FREE!</a></li>
-                <li><a href="http://www.1001freedownloads.com/">Download Free Vectors, Photos, Icons, PSDs and more</a></li>
-                <li><a href="http://sketcher.sk/450-ikon-na-stiahnutie-zadarmo/">450 ikon na stiahnutie zadarmo</a></li>
-                <li><a href="http://sketcher.sk/20-animovanych-ikon-na-stiahnutie-zadarmo/">20 animovaných ikon na stiahnutie zadarmo</a></li>
-                <li><a href="http://glyphicons.com/">glyphicons</a></li>
+            <div id="desc5" class="panel panel-primary col-sm-8 description">
+            <h2 class="panel-heading">ikonky</h2>
+            <ul class="list-group">
+                <li class="list-group-item"><a href="http://www.flaticon.com/">Flaticon</a></li>
+                <li class="list-group-item"><a href="https://github.com/saeedalipoor/icono">Icono - ikonky s CSS</a></li> 
+                <li class="list-group-item"><a href="https://www.iconfinder.com/">Iconfinde</a></li> 
+                <li class="list-group-item"><a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome - The iconic font and CSS toolkit</a></li>
+                <li class="list-group-item"><a href="http://fontawesome.io/">Font Awesome</a></li>
+                <li class="list-group-item"><a href="https://icomoon.io/app/#/select">nieco</a></li>
+                <li class="list-group-item"><a href="http://blog.invisionapp.com/free-graphic-design-icons/">DOWNLOAD 36 FLAT GRAPHIC DESIGN ICONS—FREE!</a></li>
+                <li class="list-group-item"><a href="http://www.1001freedownloads.com/">Download Free Vectors, Photos, Icons, PSDs and more</a></li>
+                <li class="list-group-item"><a href="http://sketcher.sk/450-ikon-na-stiahnutie-zadarmo/">450 ikon na stiahnutie zadarmo</a></li>
+                <li class="list-group-item"><a href="http://sketcher.sk/20-animovanych-ikon-na-stiahnutie-zadarmo/">20 animovaných ikon na stiahnutie zadarmo</a></li>
+                <li class="list-group-item"><a href="http://glyphicons.com/">glyphicons</a></li>
                 
-                <li><a href="http://pictos.cc/">Pictos</a></li>
-                <li><a href="http://www.copypastecharacter.com/">copy paste character</a></li>
-                <li><a href="">nieco</a></li>
+                <li class="list-group-item"><a href="http://pictos.cc/">Pictos</a></li>
+                <li class="list-group-item"><a href="http://www.copypastecharacter.com/">copy paste character</a></li>
+                <li class="list-group-item"><a href="">nieco</a></li>
             </ul>
             </div>
         
@@ -148,7 +176,7 @@
 		</div>
 
 
-
-     <footer><small>TMD 2015 - 2016</small></footer>   
+</div>  
+     <footer class="text-center"><small>TMD 2015 - 2016</small></footer>   
 	</body>
 </html>

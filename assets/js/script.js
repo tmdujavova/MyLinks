@@ -3,29 +3,29 @@ var main = function() {
 	var description = $('.description');
 
 description.hide();
-	var selected = $('.list').find('.selected');
+	var active = $('.list-group').find('.active');
 
-	function showDesc( selected ) {
+	function showDesc( active ) {
 
-		if ( selected.length ) {
-			var id = selected.find('a').attr('href');
-			selectedDesc = $(id);
+		if ( active.length ) {
+			var id = active.attr('href');
+			activeDesc = $(id);
 		} 
 
-		var newDesc = selectedDesc.length ?  selectedDesc : description.eq(0);
+		var newDesc = activeDesc.length ?  activeDesc : description.eq(0);
 
 		description.not( newDesc ).hide();
 		
 		newDesc.fadeIn(500);
 	}
 
-	showDesc( selected );
+	showDesc( active );
 
 
-	$('.list li').on('click', function(event) {
+	$('.list-group a').on('click', function(event) {
 
-		$(this).addClass('selected')
-			.siblings().removeClass('selected');
+		$(this).addClass('active')
+			.siblings().removeClass('active');
 
 		showDesc( $(this) );
 		event.preventDefault();

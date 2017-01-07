@@ -10,19 +10,8 @@ html, body {
 box-sizing: border-box;
 }
 
-.group:before,
-.group:after {
-	content: " ";
-	display: table;
-}
-
-.group:after {
-	clear: both;
-}
-
-.group {
-	*zoom: 1;
-}
+body { padding-top: 70px; }
+/*
 
 body {
 	color: #fff;
@@ -37,8 +26,8 @@ header {
 	padding: 15px;
 	background-color: #00897B;
 	position: fixed;
-	width: 100%;
 	top: 0;
+	width: 100%;	
 }
 
 header h1 {
@@ -138,14 +127,14 @@ header h1 {
 }
 
 
-a,.description a, .description a:link {
+.description a, .description a:link {
 	color: #fff;
 	text-decoration: none;
 }
 
-/*a:visited {
+a:visited {
 	color: #d0d0d0;
-}*/
+
 
 .description a:focus,.description a:hover,.description a:active {
 	color: #000;
@@ -177,3 +166,4 @@ footer {
 	text-align: center;
 	margin: 10px 0;
 }
+*/
