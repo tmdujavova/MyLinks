@@ -1,30 +1,5 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>My Links</title>
-		<link rel="stylesheet"  href="assets/css/normalize.css">
-        <link rel="stylesheet"  href="assets/css/bootstrap-theme.css">
-		<link rel="stylesheet"  href="assets/css/style.css">	
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<?php include_once "_partials/header.php" ?>
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
-		<script src="assets/js/script.js"></script>
-
-		<!--[if lt IE 9]>
-	    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
-		<![endif]-->
-
-	</head>
-
-	<body id="domov">
 <div class="container-fluid">
         <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
@@ -42,19 +17,21 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-      <form class="navbar-form navbar-left form-inline" id="add-form" action="#" method="post">
+      <form class="navbar-form navbar-left form-inline" id="add-form" action="_inc/add-item.php" method="post">
         <div class="form-group">
-          <input class="form-control" placeholder="Vlož link" id="text" type="text" name="new-link">
+          <input class="form-control" placeholder="Vlož link" id="text" type="text" name="link">
         </div>
-        <select class="form-control select" name="Kategória">
-                        <option value="">Kategória</option>
-                        <option value="rôzne">Rôzne</option>
-                        <option value="frameworks">CSS frameworks</option>
-                        <option value="generato">CSS generator</option>
-                        <option value="knihy">knihy</option>
-                        <option value="ikonky">ikonky</option>
+         <div class="form-group">
+          <input class="form-control" placeholder="Vlož názov" id="text" type="text" name="text">
+        </div>
+        <select class="form-control select" name="Kategoria">
+                        <option value="" name="">Kategória</option>
+                        <option value="desc1" name="desc1">CSS frameworks</option>
+                        <option value="desc2" name="desc2">obrazky</option>
+                        <option value="desc3" name="desc3">ikonky</option>
                     </select>
         <button type="submit" class="btn btn-default" >Pridaj</button>
+
        <!-- <input class="button" type="submit" value="Pridaj link">-->
       </form>      
       <ul class="nav navbar-nav navbar-right">
@@ -70,14 +47,11 @@
 		<div class="list-group list col-sm-3">
 			
             <h2>Kategória:</h2>
-                <a class="list-group-item active" href="#desc0">Rôzne</a>
-				<a class="list-group-item" href="#desc1">CSS frameworks</a>
-				<a class="list-group-item" href="#desc2">CSS generator</a>
-				<a class="list-group-item" href="#desc3">knihy</a>
-				<a class="list-group-item" href="#desc4">obrazky</a>
-				<a class="list-group-item" href="#desc5">ikonky</a>
+				<a class="list-group-item active" href="#desc1">CSS frameworks</a>
+				<a class="list-group-item" href="#desc2">obrazky</a>
+				<a class="list-group-item" href="#desc3">ikonky</a>
                 <div class="list-group-item">    
-            <form class="form-inline" id="add-cat" action="#" method="post">
+            <form class="form-inline" id="add-cat" action="_inc/add-cat.php" method="post">
         <div class="form-group">
           <input class="form-control new-cat" placeholder="Nová kategória" id="text" type="text" name="new-cat">
         </div>
@@ -93,6 +67,10 @@
             
 		</div>
     </div>
+
+
+
+
 
 </div>  
      <footer class="text-center"><small>TMD 2015 - 2017</small></footer>   

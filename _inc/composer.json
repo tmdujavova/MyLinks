@@ -1,0 +1,6 @@
+{
+    "require": {
+        "catfan/medoo": "^0.9.8",
+        "joseph-lenton/php-error": "dev-master"
+    }
+}

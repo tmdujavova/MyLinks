@@ -1,8 +1,8 @@
-var main = function() {
+(function($) {
 
 	var description = $('.description');
 
-description.hide();
+    description.hide();
 	var active = $('.list-group').find('.active');
 
 	function showDesc( active ) {
@@ -53,9 +53,32 @@ description.hide();
 		else backToTop.hide();
 	});
 
+
+	//var form  = $('#add-form');
+
 	
+	//form.on('submit', function(event) {
+	//	event.preventDefault();
 
-};
+	//	var req = $.ajax({
+	//		url: form.attr('action'),
+	//		type: 'POST',
+	//		data: form.serialize()
+	//	});
+
+	//	req.done(function(data) {
+	//		if ( data === 'success' ) {
+				
+	//			var li = $('<li class="list-group-item">'+ input.val() +'</li>');
+
+	//			li.hide ()
+	//			   .appendTo('.list-group')
+	//			   .fadeIn();
+	//		}
+	//	});
+	//});
 
 
-$(document).ready(main);
+
+
+}(jQuery));
