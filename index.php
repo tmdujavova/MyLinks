@@ -45,11 +45,11 @@
 
 	<div class="row">
 		<div class="list-group list col-sm-3">
-			
+      
             <h2>Kategória:</h2>
-				<a class="list-group-item active" href="#desc1">CSS frameworks</a>
-				<a class="list-group-item" href="#desc2">obrazky</a>
-				<a class="list-group-item" href="#desc3">ikonky</a>
+        <a class="list-group-item active" href="#desc1">CSS frameworks</a>
+        <a class="list-group-item" href="#desc2">obrazky</a>
+        <a class="list-group-item" href="#desc3">ikonky</a>
                 <div class="list-group-item">    
             <form class="form-inline" id="add-cat" action="_inc/add-cat.php" method="post">
         <div class="form-group">
@@ -57,8 +57,8 @@
         </div>
         <button type="submit" class="btn btn-default" >+</button>
       </form>      
-		</div> 	
-		</div>
+    </div>  
+    </div>
 
     <div class="desc-container">
     <?php
@@ -68,6 +68,36 @@
 		</div>
     </div>
 
+    <div>
+
+
+
+    </div>
+
+<?php
+
+
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "todo";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+// Lists the table name and then the field name
+for ($i = 0; $i < mysqli_num_fields($result); ++$i) {
+    $table = mysqli_field_table($result, $i);
+    $field = mysqli_field_name($result, $i);
+
+    echo  "$table: $field\n";
+}
+
+?>
 
 
 
