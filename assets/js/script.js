@@ -53,7 +53,34 @@ description.hide();
 		else backToTop.hide();
 	});
 
-	
+	var form = $('#add-form'),
+		inputLink = $('#link');
+		inputText = $('#text');
+
+	form.on('submit', function(event) {
+		event.preventDefault();
+
+		var req = $.ajax({
+			url: form.attr('action'),
+			type: 'POST',
+			data: form.serialize()
+		});
+
+		req.done(function(data){
+			if (data === 'success'){
+
+				var li = $('<li class="list-group-item"><a href="'+ inputLink.val() +'">'+ inputText.val() +'</a></li>');
+
+				li.hide()
+				  .appendTo('.list-group')
+				  .fadeIn();
+			}
+			
+		});
+
+	});
+
+
 
 };
 

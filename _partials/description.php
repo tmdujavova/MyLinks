@@ -1,7 +1,7 @@
        
 
 
-<?php $data = $database->select('desc1', [ 'id', 'text' , 'link' ]); ?>
+        <?php $data = $database->select('desc1', [ 'id', 'text' , 'link' ]); ?>
         <div id="desc1" class="panel panel-primary col-sm-8 description">
         <h2 class="panel-heading">CSS frameworks</h2>
     		<ul class="list-group">
@@ -17,7 +17,7 @@
             </div>
 
 
-<?php $data = $database->select('desc2', [ 'id', 'text' , 'link' ]); ?>
+        <?php $data = $database->select('desc2', [ 'id', 'text' , 'link' ]); ?>
         <div id="desc2" class="panel panel-primary col-sm-8 description">
         <h2 class="panel-heading">obrazky</h2>
             <ul class="list-group">

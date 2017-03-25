@@ -19,7 +19,7 @@
 
       <form class="navbar-form navbar-left form-inline" id="add-form" action="_inc/add-item.php" method="post">
         <div class="form-group">
-          <input class="form-control" placeholder="Vlož link" id="text" type="text" name="link">
+          <input class="form-control" placeholder="Vlož link" id="link" type="text" name="link">
         </div>
          <div class="form-group">
           <input class="form-control" placeholder="Vlož názov" id="text" type="text" name="text">

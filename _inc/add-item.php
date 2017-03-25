@@ -1,5 +1,7 @@
 <?php
 
+
+
 	// include
 	require 'config.php';
 
@@ -14,6 +16,6 @@
 
 	// success
 	if ( $id ) {
-		header("Location: $site_url/index.php");
+		//header("Location: $site_url/index.php");
 		die('success');
 	}
