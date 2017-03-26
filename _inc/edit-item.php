@@ -4,8 +4,9 @@
 	require 'config.php';
 
 	// update item
-	$affected = $database->update('items',
-		[ 'text' => $_POST['message'] ],
+	$affected = $database->update('desc1',
+		[ 'text' => $_POST['text'],
+		'link' => $_POST['link'] ],
 		[ 'id' => $_POST['id'] ]
 	);
 

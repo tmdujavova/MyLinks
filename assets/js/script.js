@@ -56,9 +56,7 @@ description.hide();
 	var form = $('#add-form'),
 		inputLink = $('#link'),
 		inputText = $('#text');
-		
-
-		
+				
 
 	form.on('submit', function(event) {
 		event.preventDefault();
@@ -75,18 +73,30 @@ description.hide();
 		req.done(function(data){
 			if (data === 'success'){
 
-
-
 				var li = $('<li class="list-group-item"><a href="'+ inputLink.val() +'">'+ inputText.val() +'</a></li>');
 
 				li.hide()
 				  .appendTo(inputClass)
 				  .fadeIn();
 
-			}
-			
+				  inputLink.val('');
+				  inputText.val('');
+			}			
 		});
+	});
 
+	inputText.on('keypress', function(event) {
+		if ( event.which === 13 ) {
+			form.submit();
+			return false;
+		}
+	});
+
+	inputLink.on('keypress', function(event) {
+		if ( event.which === 13 ) {
+			form.submit();
+			return false;
+		}
 	});
 
 

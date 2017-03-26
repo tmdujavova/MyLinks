@@ -4,7 +4,7 @@
 	require 'config.php';
 
 	// delete item
-	$affected = $database->delete('items',
+	$affected = $database->delete('desc1',
 		[ 'id' => $_POST['id'] ]
 	);
 
@@ -13,3 +13,4 @@
 		header("Location: $site_url/index.php");
 		die();
 	}
+

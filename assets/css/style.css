@@ -29,6 +29,15 @@ body { padding-top: 70px; }
 	padding-left: 25px;
 }
 
+
+.list-group-item .controls {
+	display: none;
+}
+
+.list-group-item:hover .controls {
+	display: block;
+}
+
 .description .list-group-item {
 	border-bottom: 1px #2b3e50 dotted ;  
 	margin-bottom: 1px;
@@ -89,4 +98,6 @@ footer {
 	20%  { opacity: 0; }
 	100% { opacity: 1; transform: translateX(0); }
 }
+
+
 
