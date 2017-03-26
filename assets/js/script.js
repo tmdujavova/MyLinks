@@ -54,11 +54,17 @@ description.hide();
 	});
 
 	var form = $('#add-form'),
-		inputLink = $('#link');
+		inputLink = $('#link'),
 		inputText = $('#text');
+		
+
+		
 
 	form.on('submit', function(event) {
 		event.preventDefault();
+
+		var inputKat = $('#kategoria').val(),
+		inputClass = '#'+inputKat+' .list-group';
 
 		var req = $.ajax({
 			url: form.attr('action'),
@@ -69,11 +75,14 @@ description.hide();
 		req.done(function(data){
 			if (data === 'success'){
 
+
+
 				var li = $('<li class="list-group-item"><a href="'+ inputLink.val() +'">'+ inputText.val() +'</a></li>');
 
 				li.hide()
-				  .appendTo('.list-group')
+				  .appendTo(inputClass)
 				  .fadeIn();
+
 			}
 			
 		});

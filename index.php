@@ -24,7 +24,7 @@
          <div class="form-group">
           <input class="form-control" placeholder="Vlož názov" id="text" type="text" name="text">
         </div>
-        <select class="form-control select" name="Kategoria">
+        <select class="form-control select" name="Kategoria" id="kategoria">
                         <option value="" name="">Kategória</option>
                         <option value="desc1" name="desc1">CSS frameworks</option>
                         <option value="desc2" name="desc2">obrazky</option>
@@ -68,36 +68,7 @@
 		</div>
     </div>
 
-    <div>
-
-
-
-    </div>
-
-<?php
-
-
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "todo";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-
-// Lists the table name and then the field name
-for ($i = 0; $i < mysqli_num_fields($result); ++$i) {
-    $table = mysqli_field_table($result, $i);
-    $field = mysqli_field_name($result, $i);
-
-    echo  "$table: $field\n";
-}
-
-?>
+    
 
 
 
