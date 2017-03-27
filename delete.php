@@ -3,19 +3,24 @@
 
 	require_once '_inc/config.php';
 
-	$text = $database->get("desc1", "text", [
-		"id" => $_GET['id']
-	]);
-
-	$link = $database->get("desc1", "link", [
-		"id" => $_GET['id']
-	]);
-
-	if ( ! $text )
+	if ( ! isset($_GET['id']) )
 	{
-		header("HTTP/1.0 404 Not Found");
-		include_once "404.php";
-		die();
+		show_404();
+	}
+
+	$table = $_GET['table'];
+
+	$text = $database->get($table, "text", [
+		"id" => $_GET['id']
+	]);
+
+	$link = $database->get($table, "link", [
+		"id" => $_GET['id']
+	]);
+
+	if ( ! $text || ! $link )
+	{
+		show_404();
 	}
 
 
@@ -28,18 +33,21 @@ include_once "_partials/header.php"
 
 <div >
 
-	<form class="navbar-form navbar-left form-inline" id="delete-form" action="_inc/delete-item.php" method="post">
+	<form class="navbar-form navbar-left form-inline" id="delete-form" action="<?php echo "_inc/delete-item.php?table=$table" ?>" method="post">
         <div class="form-group">
-        <textarea disabled class="form-control" name="link" id="link" rows="1"><?php echo $link ?></textarea>
+          <input disabled class="form-control" value="<?php echo $link ?>" id="link" type="text" name="link">
         </div>
          <div class="form-group">
-         <textarea disabled class="form-control" name="text" id="text" rows="1"><?php echo $text ?></textarea>
+          <input disabled class="form-control" value="<?php echo $text ?>" id="text" type="text" name="text">
         </div>
+
+
+
 		<div class="form-group">
          <input name="id" type="hidden" value="<?php echo $_GET['id'] ?>">
 			<button type="submit" class="btn btn-default" >Zmaž</button>
 		        <span class="controls">
-			        <a href="<?php echo $site_url ?>" class="back-link text-muted">späť</a>
+			        <a href="<?php echo $base_url ?>" class="back-link text-muted">späť</a>
 		        </span>
         
      

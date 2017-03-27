@@ -3,14 +3,16 @@
 	// include
 	require 'config.php';
 
+	$table = $_GET['table'];
+	
 	// delete item
-	$affected = $database->delete('desc1',
+	$affected = $database->delete($table,
 		[ 'id' => $_POST['id'] ]
 	);
 
 	// success
 	if ( $affected ) {
-		header("Location: $site_url/index.php");
+		header("Location: $base_url/index.php");
 		die();
 	}
 

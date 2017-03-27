@@ -24,11 +24,12 @@ $sql = "CREATE TABLE $nova_databaza (
 id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 created_at TIMESTAMP,
 text TEXT NOT NULL,
-link TEXT NOT NULL
+link TEXT NOT NULL,
+table TEXT NOT NULL
 )";
 
 if ($conn->query($sql) === TRUE) {
-    header("Location: $site_url/index.php");
+    header("Location: $base_url/index.php");
 		die('success');
 } else {
     echo "Error creating table: " . $conn->error;

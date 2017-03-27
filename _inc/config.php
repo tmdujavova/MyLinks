@@ -10,7 +10,7 @@ require_once 'vendor/autoload.php';
 //\php_error\reportErrors();
 
 // global variables
-$site_url = 'http://localhost/MyLinksSKUSKA';
+$base_url = 'http://localhost/MyLinksSKUSKA';
 
 // connect to db
 $database = new medoo([
@@ -21,3 +21,12 @@ $database = new medoo([
 	'password'      => 'root',
 	'charset'       => 'utf8'
 ]);
+
+//global function
+function show_404()
+{
+	header("HTTP/1.0 404 Not Found");
+	include_once "404.php";
+	die();
+
+}

@@ -3,8 +3,11 @@
 	// include
 	require 'config.php';
 
+	$table = $_GET['table'];
+
+
 	// update item
-	$affected = $database->update('desc1',
+	$affected = $database->update($table,
 		[ 'text' => $_POST['text'],
 		'link' => $_POST['link'] ],
 		[ 'id' => $_POST['id'] ]
@@ -12,6 +15,6 @@
 
 	// success
 	if ( $affected ) {
-		header("Location: $site_url/index.php");
+		header("Location: $base_url/index.php");
 		die();
 	}

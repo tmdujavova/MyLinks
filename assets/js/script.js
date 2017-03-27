@@ -67,20 +67,38 @@ description.hide();
 		var req = $.ajax({
 			url: form.attr('action'),
 			type: 'POST',
-			data: form.serialize()
+			data: form.serialize(),
+			dataType: 'json'
 		});
 
-		req.done(function(data){
-			if (data === 'success'){
+		
 
-				var li = $('<li class="list-group-item"><a href="'+ inputLink.val() +'">'+ inputText.val() +'</a></li>');
+
+		req.done(function(data){
+
+
+			if (data.status === 'success'){
+
+				/*var li = $('<li class="list-group-item"><a href="'+ inputLink.val() +'">'+ inputText.val() +'</a></li>');
 
 				li.hide()
 				  .appendTo(inputClass)
+				  .fadeIn();*/
+
+
+				$.ajax({ url: baseURL}).done(function(html){
+						var newItem = $(html).find('#'+ inputKat +'-' + data.id);
+
+					newItem.hide()
+				  .appendTo(inputClass)
 				  .fadeIn();
 
-				  inputLink.val('');
-				  inputText.val('');
+				inputLink.val('');
+				inputText.val('');
+
+				});
+
+				  
 			}			
 		});
 	});

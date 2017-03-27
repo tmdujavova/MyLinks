@@ -11,11 +11,21 @@
 
 	$id = $database->insert($nazov_databazy, [
 		'link' => $_POST['link'],
-		'text' => $_POST['text']
+		'text' => $_POST['text'],
+		'table' => $_POST['Kategoria']
 	]);
 
 	// success
 	if ( $id ) {
-		//header("Location: $site_url/index.php");
-		die('success');
+		$message = json_encode ([
+			'status' => 'success',
+			'id' => $id
+			]);
+
+		die($message);
+		
 	}
+
+
+	//header("Location: $base_url/index.php");
+	//	die('success');

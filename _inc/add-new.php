@@ -10,6 +10,6 @@
 
 	// success
 	if ( $id ) {
-		header('Location: http://localhost/todoapp/index.php');
+		header('Location: $base_urlindex.php');
 		die();
 	}
