@@ -10,7 +10,7 @@ require_once 'vendor/autoload.php';
 //\php_error\reportErrors();
 
 // global variables
-$base_url = 'http://localhost/MyLinksSKUSKA';
+$base_url = 'http://localhost/MyLinks';
 
 // connect to db
 $database = new medoo([

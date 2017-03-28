@@ -33,7 +33,7 @@ include_once "_partials/header.php"
 
 <div >
 
-	<form class="navbar-form navbar-left form-inline" id="add-form" action="<?php echo "_inc/edit-item.php?table=$table" ?>" method="post">
+	<form class="navbar-form navbar-left form-inline" id="add-new" action="<?php echo "_inc/edit-item.php?table=$table" ?>" method="post">
 		<div class="form-group">
           <input class="form-control" value="<?php echo $link ?>" id="link" type="text" name="link">
         </div>

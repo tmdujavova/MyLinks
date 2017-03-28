@@ -117,6 +117,31 @@ description.hide();
 		}
 	});
 
+/*var descList = $('.descr'),
+    descLi = descList.find('li'),
+    controls = $('.controls'),
+    editLink = controls.find('.edit-link'),
+    deleteLink = controls.find('.delete-link');
+
+	 controls.on('click', function(event) {
+	event.preventDefault();
+
+    });
+
+	 deleteLink.on('click', function(event) {
+	event.preventDefault();
+	 $(this).css("color", "red");
+
+    });
+
+	listli.on('keypress', function(event) {
+		   if ( event.which === 13 ) {
+            $.ajax({
+                url: 'edit-item.php',
+                type: 'POST'
+            });
+        }
+    });*/
 
 
 };

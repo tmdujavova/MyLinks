@@ -19,12 +19,12 @@
 
       <form class="navbar-form navbar-left form-inline" id="add-form" action="_inc/add-item.php" method="post">
         <div class="form-group">
-          <input class="form-control" placeholder="Vlož link" id="link" type="text" name="link">
+          <input class="form-control" placeholder="Vlož link" id="link" type="text" name="link" required>
         </div>
          <div class="form-group">
-          <input class="form-control" placeholder="Vlož názov" id="text" type="text" name="text">
+          <input class="form-control" placeholder="Vlož názov" id="text" type="text" name="text" required>
         </div>
-        <select class="form-control select" name="Kategoria" id="kategoria">
+        <select class="form-control select" name="Kategoria" id="kategoria" required>
                         <option value="" name="">Kategória</option>
                         <option value="desc1" name="desc1">CSS frameworks</option>
                         <option value="desc2" name="desc2">obrazky</option>
