@@ -10,11 +10,13 @@
 	/* zistit user_id a vlozit
 */
 
-	$id = $database->insert('mylinks', [
 
+
+	$id = $database->insert('mylinks', [
 		'link' => $_POST['link'],
 		'nazov' => $_POST['nazov'],
-		'kategoria' => $_POST['kategoria']
+		'kategoria_id' => $_POST['kategoria'],
+		'id_user' => "0"
 	]);
 
 	// success

@@ -9,7 +9,6 @@
 	}
 /* zistit user_id a z neho vyberat [where]
 
-kategoriu asi netreba ked kazde ma vlastne id ??
 */
 
 	$nazov = $database->get('mylinks', "nazov", [

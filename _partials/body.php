@@ -25,9 +25,16 @@
         </div>
         <select class="form-control select" name="kategoria" id="kategoria" required>
                         <option value="" name="">Kategória</option>
-                        <option value="desc1" name="desc1">CSS frameworks</option>
-                        <option value="desc2" name="desc2">obrazky</option>
-                        <option value="desc3" name="desc3">ikonky</option>
+
+<?php
+ $kategorie = $database->select('cat', [ 'id', 'nazov']);
+
+foreach ( $kategorie as $name_kat ) {
+
+echo '<option value="'. $name_kat['id'].'" name="'. $name_kat['id'].'">'. $name_kat['nazov'].'</option>';
+    }
+?>
+
                     </select>
         <button type="submit" class="btn btn-default" >Pridaj</button>
 
@@ -42,14 +49,25 @@
 </nav>
 
 
+
+
+
+
 	<div class="row">
 		<div class="list-group list col-sm-3">
 
             <h2>Kategória:</h2>
             <a class="list-group-item " href="<?php echo $base_url . '/index.php' ?>">Vsetko</a>
-        <a class="list-group-item" href="<?php echo $base_url .'/index.php?kategoria=desc1' ?>">CSS frameworks</a>
-        <a class="list-group-item" href="<?php echo $base_url . '/index.php?kategoria=desc2' ?>">obrazky</a>
-        <a class="list-group-item" href="<?php echo $base_url . '/index.php?kategoria=desc3' ?>">ikonky</a>
+
+        <?php
+ $kategorie = $database->select('cat', [ 'id', 'nazov']);
+
+foreach ( $kategorie as $name_kat ) {
+
+echo '<a class="list-group-item" href="'. $base_url .'/index.php?kategoria_id='. $name_kat['id'].'">'. $name_kat['nazov'].'</a>';
+    }
+?>
+
                 <div class="list-group-item">
             <form class="form-inline" id="add-cat" action="_inc/add-cat.php" method="post">
         <div class="form-group">
