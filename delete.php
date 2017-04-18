@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 
 	require_once '_inc/config.php';
@@ -7,24 +7,26 @@
 	{
 		show_404();
 	}
+/* zistit user_id a z neho vyberat [where]
 
-	$table = $_GET['table'];
+kategoriu asi netreba ked kazde ma vlastne id ??
+*/
 
-	$text = $database->get($table, "text", [
+	$nazov = $database->get('mylinks', "nazov", [
 		"id" => $_GET['id']
 	]);
 
-	$link = $database->get($table, "link", [
+	$link = $database->get('mylinks', "link", [
 		"id" => $_GET['id']
 	]);
 
-	if ( ! $text || ! $link )
+	if ( ! $nazov || ! $link )
 	{
 		show_404();
 	}
 
 
-include_once "_partials/header.php" 
+include_once "_partials/header.php"
 
 ?>
 
@@ -33,12 +35,12 @@ include_once "_partials/header.php"
 
 <div >
 
-	<form class="navbar-form navbar-left form-inline" id="delete-form" action="<?php echo "_inc/delete-item.php?table=$table" ?>" method="post">
+	<form class="navbar-form navbar-left form-inline" id="delete-form" action="_inc/delete-item.php" method="post">
         <div class="form-group">
           <input disabled class="form-control" value="<?php echo $link ?>" id="link" type="text" name="link">
         </div>
          <div class="form-group">
-          <input disabled class="form-control" value="<?php echo $text ?>" id="text" type="text" name="text">
+          <input disabled class="form-control" value="<?php echo $nazov ?>" id="nazov" type="text" name="nazov">
         </div>
 
 
@@ -49,10 +51,10 @@ include_once "_partials/header.php"
 		        <span class="controls">
 			        <a href="<?php echo $base_url ?>" class="back-link text-muted">späť</a>
 		        </span>
-        
-     
+
+
   </div>
-      </form>      
+      </form>
 
 
 </div>
@@ -61,7 +63,7 @@ include_once "_partials/header.php"
 
 
 
-</div>  
-     <footer class="text-center"><small>TMD 2015 - 2017</small></footer>   
+</div>
+     <footer class="text-center"><small>TMD 2015 - 2017</small></footer>
 	</body>
 </html>

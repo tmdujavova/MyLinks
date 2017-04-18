@@ -2,7 +2,7 @@ var main = function() {
 
 	var description = $('.description');
 
-description.hide();
+/*description.hide();
 	var active = $('.list-group').find('.active');
 
 	function showDesc( active ) {
@@ -10,12 +10,12 @@ description.hide();
 		if ( active.length ) {
 			var id = active.attr('href');
 			activeDesc = $(id);
-		} 
+		}
 
 		var newDesc = activeDesc.length ?  activeDesc : description.eq(0);
 
 		description.not( newDesc ).hide();
-		
+
 		newDesc.show().addClass('fadeInRight');
 	}
 
@@ -28,14 +28,14 @@ description.hide();
 			.siblings().removeClass('active');
 
 		showDesc( $(this) );
-		event.preventDefault();
+		//event.preventDefault();
 	});
 
+*/
 
 
-
-	var backToTop = $('<a>', { 
-			href: '#domov', 
+	var backToTop = $('<a>', {
+			href: '#domov',
 			class: 'back-to-top',
 			html: '<i class="fa fa-caret-up fa-5x"></i>'
 		});
@@ -56,7 +56,7 @@ description.hide();
 	var form = $('#add-form'),
 		inputLink = $('#link'),
 		inputText = $('#text');
-				
+
 
 	form.on('submit', function(event) {
 		event.preventDefault();
@@ -71,7 +71,7 @@ description.hide();
 			dataType: 'json'
 		});
 
-		
+
 
 
 		req.done(function(data){
@@ -98,8 +98,8 @@ description.hide();
 
 				});
 
-				  
-			}			
+
+			}
 		});
 	});
 

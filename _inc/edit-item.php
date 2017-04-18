@@ -3,12 +3,11 @@
 	// include
 	require 'config.php';
 
-	$table = $_GET['table'];
 
 
 	// update item
-	$affected = $database->update($table,
-		[ 'text' => $_POST['text'],
+	$affected = $database->update('mylinks',
+		[ 'nazov' => $_POST['nazov'],
 		'link' => $_POST['link'] ],
 		[ 'id' => $_POST['id'] ]
 	);

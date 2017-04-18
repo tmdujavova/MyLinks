@@ -8,7 +8,7 @@
 		<title>My Links</title>
 		<link rel="stylesheet"  href="assets/css/normalize.css">
         <link rel="stylesheet"  href="assets/css/bootstrap-theme.css">
-		<link rel="stylesheet"  href="assets/css/style.css">	
+		<link rel="stylesheet"  href="assets/css/style.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
 		<script>
@@ -31,4 +31,4 @@
 
 	</head>
 
-	<body>
+<body>

@@ -3,10 +3,9 @@
 	// include
 	require 'config.php';
 
-	$table = $_GET['table'];
-	
+
 	// delete item
-	$affected = $database->delete($table,
+	$affected = $database->delete('mylinks',
 		[ 'id' => $_POST['id'] ]
 	);
 

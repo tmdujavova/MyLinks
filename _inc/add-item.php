@@ -6,13 +6,15 @@
 	require 'config.php';
 
 	// add new stuff
-	// 
-	$nazov_databazy = $_POST['Kategoria'];
 
-	$id = $database->insert($nazov_databazy, [
+	/* zistit user_id a vlozit
+*/
+
+	$id = $database->insert('mylinks', [
+
 		'link' => $_POST['link'],
-		'text' => $_POST['text'],
-		'table' => $_POST['Kategoria']
+		'nazov' => $_POST['nazov'],
+		'kategoria' => $_POST['kategoria']
 	]);
 
 	// success
@@ -21,9 +23,9 @@
 			'status' => 'success',
 			'id' => $id
 			]);
-
+		//header("Location: $base_url/index.php");
 		die($message);
-		
+
 	}
 
 
