@@ -22,6 +22,42 @@ $database = new medoo([
 	'charset'       => 'utf8'
 ]);
 
+$config = [
+
+	'db' => [
+		'type'     => 'mysql',
+		'name'     => 'todo',
+		'server'   => 'localhost',
+		'username' => 'root',
+		'password' => 'root',
+		'charset'  => 'utf8'
+	]
+
+];
+
+
+$db = new PDO(
+	"{$config['db']['type']}:host={$config['db']['server']};
+	dbname={$config['db']['name']};charset={$config['db']['charset']}",
+	$config['db']['username'], $config['db']['password']
+);
+
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+
+require_once 'functions-auth.php';
+
+// auth
+require_once 'vendor/PHPAuth/languages/en.php';
+require_once 'vendor/PHPAuth/config.class.php';
+require_once 'vendor/PHPAuth/auth.class.php';
+
+
+
+$auth_config = new Config( $db );
+$auth = new Auth( $db, $auth_config, $lang );
+
+
 //global function
 function show_404()
 {

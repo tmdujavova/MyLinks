@@ -40,7 +40,21 @@
           <!-- <input class="button" type="submit" value="Pridaj link">-->
         </form>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Meno Priezvisko</a></li>
+        <?php if ( logged_in() ) : $logged_in = get_user() ?>
+          <li><?= plain( $logged_in->email ) ?></li>
+        <li><a href="<?php echo "$base_url/logout.php" ?>" class="btn btn-default logout">logout</a></li>
+<?php endif ?>
+          <?php
+          /*
+            if (logged_in()
+              ) {
+              echo "logged in";
+
+
+            } else {
+              echo "Forbidden";
+            }*/
+          ?>
 
         </ul>
       </div><!-- /.navbar-collapse -->
