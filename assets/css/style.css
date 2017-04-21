@@ -6,7 +6,7 @@ html, body {
 }
 
 * {
-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body { padding-top: 70px; }
@@ -39,20 +39,20 @@ body { padding-top: 70px; }
 }
 
 .description .list-group-item {
-	border-bottom: 1px #2b3e50 dotted ;  
+	border-bottom: 1px #2b3e50 dotted ;
 	margin-bottom: 1px;
 }
 
 .description .controls {
 	position: relative;
-    bottom: 6px;
+	bottom: 6px;
 }
 
 
 
 .description .controls a {
 	font-size: 20px;
-    margin-left: 8px;
+	margin-left: 8px;
 }
 
 .description .controls a:hover {
@@ -84,11 +84,11 @@ footer {
 	text-align: center;
 }
 
-#add-form .form-group:first-child, #delete-form .form-group:first-child {
+#add-form .form-group:first-child, #delete-form .form-group:first-child, #edit-form .form-group:first-child {
 	width: 400px;
-} 
+}
 
-#add-form #link, #delete-form #link {
+#add-form #link, #delete-form #link, #edit-form #link {
 	width: 400px;
 }
 
@@ -99,13 +99,13 @@ footer {
 .fadeInRight {
 	-webkit-animation: .7s both;
 	-moz-animation: .7s both; /* Fx 5+ */
-  	-o-animation: .7s both; /* Opera 12+ */
-  	animation: .7s both;
+	-o-animation: .7s both; /* Opera 12+ */
+	animation: .7s both;
 
-  	-webkit-animation-name: fadeInRight;
-  	-moz-animation-name: fadeInRight; /* Fx 5+ */
-  	-o-animation-name: fadeInRight; /* Opera 12+ */
-  	animation-name: fadeInRight;
+	-webkit-animation-name: fadeInRight;
+	-moz-animation-name: fadeInRight; /* Fx 5+ */
+	-o-animation-name: fadeInRight; /* Opera 12+ */
+	animation-name: fadeInRight;
 }
 
 @-webkit-keyframes fadeInRight {
@@ -115,17 +115,17 @@ footer {
 }
 
 @-moz-keyframes fadeInRight {
-  	0%   { opacity: 0; -moz-transform: translateX(1000px); }
+	0%   { opacity: 0; -moz-transform: translateX(1000px); }
 	20%  { opacity: 0; }
 	100% { opacity: 1; -moz-transform: translateX(0); }
 }
 @-o-keyframes fadeInRight {
-	 0%   { opacity: 0; -o-transform: translateX(1000px); }
+	0%   { opacity: 0; -o-transform: translateX(1000px); }
 	20%  { opacity: 0; }
 	100% { opacity: 1; -o-transform: translateX(0); }
 }
 @keyframes fadeInRight {
-  	0%   { opacity: 0; transform: translateX(1000px); }
+	0%   { opacity: 0; transform: translateX(1000px); }
 	20%  { opacity: 0; }
 	100% { opacity: 1; transform: translateX(0); }
 }

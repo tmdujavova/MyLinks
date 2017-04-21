@@ -2,9 +2,9 @@
 
 <?php include "_partials/body.php" ?>
 
-    <div class="desc-container">
-    <?php include '_partials/description.php' ?>
+<div class="desc-container">
+	<?php include '_partials/description.php' ?>
 
-		</div>
+</div>
 
 <?php include "_partials/footer.php" ?>
