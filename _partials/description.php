@@ -5,10 +5,22 @@ if ( ! isset($_GET['kategoria_id']) )
 {
 $logged_in = get_user();
 
- $data = $database->select('mylinks', [ 'id', 'nazov' , 'link'], ['user_id' => $logged_in->uid]);
+$data = $database->select('mylinks', [ 'id', 'nazov' , 'link'], ['user_id' => $logged_in->uid]);
+
+if ( ! $data )
+{
+            echo '<div id="desc-" class="panel panel-primary col-sm-8 description">
+        <h2 class="panel-heading"></h2>
+        <ul class="list-group descr">
+            <li class="list-group-item">Vytvor si kategóriu.</li>
+
+        </ul> </div>';
+}
+else {
+
 
  echo '<div id="desc-all" class="panel panel-primary col-sm-8 description">
- <h2 class="panel-heading">Vsetko</h2>
+ <h2 class="panel-heading">Všetko</h2>
  <ul class="list-group descr">';
 
     foreach ( $data as $item ) {
@@ -23,7 +35,7 @@ $logged_in = get_user();
     }
 
     echo '</ul>
-</div>';
+</div>';}
 } else {
 
     $kategoria_id = $_GET['kategoria_id'];
@@ -37,7 +49,7 @@ $logged_in = get_user();
         echo '<div id="desc-'. $kategoria_id .'" class="panel panel-primary col-sm-8 description">
         <h2 class="panel-heading">'. $nazov_kat .'</h2>
         <ul class="list-group descr">
-            <li class="list-group-item">Nič si tu ešte nepridal </li>
+            <li class="list-group-item">Nič si tu ešte nepridal. </li>
 
         </ul> </div>';
 

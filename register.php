@@ -9,10 +9,6 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' )
 
 		$register = $auth->register( $email, $password, $password_repeat );
 
-		echo '<pre>';
-		print_r( $register );
-		echo '</pre>';
-
 		if($register['error']) {
 			echo '<div class="error">' .$register['message'].'</div>';
 		} else {
@@ -20,7 +16,6 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' )
 			header("Location: $base_url/login.php");
 			die();
 		}
-
 }
 	include_once "_partials/header.php";
 
@@ -28,16 +23,16 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' )
 
 	<form method="post" action="" class="box box-auth">
 		<h2 class="box-auth-heading">
-			Register, you dumbass
+			Registrácia
 		</h2>
 
-		<input type="text" value="" class="form-control" name="email" placeholder="Email Address" required autofocus>
-		<input type="password" class="form-control" name="password" placeholder="Password" required>
-		<input type="password" class="form-control" name="repeat" placeholder="Password again, DO IT" required>
-		<button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+		<input type="text" value="" class="form-control" name="email" placeholder="Email" required autofocus>
+		<input type="password" class="form-control" name="password" placeholder="Heslo" required>
+		<input type="password" class="form-control" name="repeat" placeholder="Heslo znova" required>
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Zaregistruj sa</button>
 
 		<p class="alt-action text-center">
-			or <a href="<?php echo "$base_url/login.php" ?>">come inside (of me)</a>
+			Máš účet? <a href="<?php echo "$base_url/login.php" ?>">Prihlás sa</a>
 		</p>
 	</form>
 

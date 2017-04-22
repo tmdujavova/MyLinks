@@ -3,6 +3,6 @@
 <div class="page-header eror">
 	<h1>404</h1>
 	<p>
-		not found :(
+		Stránka sa nenašla :(
 	</p>
 <?php include "_partials/footer.php" ?>

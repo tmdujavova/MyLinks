@@ -1,6 +1,5 @@
 <?php
 
-
 	// include
 require 'config.php';
 if ( ! logged_in() ) {
@@ -9,14 +8,13 @@ if ( ! logged_in() ) {
 	}
 	else {
 
-	$logged_in = get_user();
 	// add new stuff
 
 $id = $database->insert('mylinks', [
 	'link' => $_POST['link'],
 	'nazov' => $_POST['nazov'],
 	'kategoria_id' => $_POST['kategoria'],
-	'user_id' => $logged_in->uid
+	'user_id' => get_user()->uid
 	]);
 
 	// success

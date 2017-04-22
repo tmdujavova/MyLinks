@@ -1,7 +1,10 @@
 <?php
 
-
 require_once '_inc/config.php';
+if ( ! logged_in() ) {
+		header("Location: $base_url/login.php");
+		die();
+	}
 
 if ( ! isset($_GET['id']) )
 {
@@ -45,7 +48,7 @@ include_once "_partials/header.php"
 			<input name="id" type="hidden" value="<?php echo $_GET['id'] ?>">
 			<button type="submit" class="btn btn-default" >Uprav</button>
 			<span class="controls">
-				<a href="<?php echo $base_url ?>" class="back-link text-muted">späť</a>
+				<a href="<?php echo $base_url ?>" class="back-link text-muted">Späť</a>
 			</span>
 
 

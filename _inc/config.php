@@ -48,7 +48,7 @@ $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 require_once 'functions-auth.php';
 
 // auth
-require_once 'vendor/PHPAuth/languages/en.php';
+require_once 'vendor/PHPAuth/languages/cs_SK.php';
 require_once 'vendor/PHPAuth/config.class.php';
 require_once 'vendor/PHPAuth/auth.class.php';
 

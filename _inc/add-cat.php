@@ -8,11 +8,10 @@ if ( ! logged_in() ) {
 	}
 	else {
 
-	$logged_in = get_user();
 
 $id = $database->insert('cat', [
 	'nazov' => $_POST['new-cat'],
-	'user_id' => $logged_in->uid
+	'user_id' => get_user()->uid
 	]);
 
 	// success

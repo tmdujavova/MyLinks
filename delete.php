@@ -43,7 +43,7 @@ include_once "_partials/header.php"
 			<input name="id" type="hidden" value="<?php echo $_GET['id'] ?>">
 			<button type="submit" class="btn btn-default" >Zmaž</button>
 			<span class="controls">
-				<a href="<?php echo $base_url ?>" class="back-link text-muted">späť</a>
+				<a href="<?php echo $base_url ?>" class="back-link text-muted">Späť</a>
 			</span>
 
 
