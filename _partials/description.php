@@ -3,8 +3,9 @@ require_once '_inc/config.php';
 
 if ( ! isset($_GET['kategoria_id']) )
 {
+$logged_in = get_user();
 
- $data = $database->select('mylinks', [ 'id', 'nazov' , 'link']);
+ $data = $database->select('mylinks', [ 'id', 'nazov' , 'link'], ['user_id' => $logged_in->uid]);
 
  echo '<div id="desc-all" class="panel panel-primary col-sm-8 description">
  <h2 class="panel-heading">Vsetko</h2>
@@ -27,7 +28,7 @@ if ( ! isset($_GET['kategoria_id']) )
 
     $kategoria_id = $_GET['kategoria_id'];
 
-    $data = $database->select('mylinks', [ 'id', 'nazov' , 'link'], ['kategoria_id' => $kategoria_id ]);
+    $data = $database->select('mylinks', [ 'id', 'nazov' , 'link'], ["AND" => ['kategoria_id' => $kategoria_id, 'user_id' => $logged_in->uid ]]);
     $nazov_kat = $database->get('cat', "nazov", ['id' => $kategoria_id ]);
 
 

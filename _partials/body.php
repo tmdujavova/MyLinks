@@ -1,4 +1,7 @@
-<div class="container-fluid">
+
+<?php if ( logged_in() ) : $logged_in = get_user() ?>
+  <div class="container-fluid">
+
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -26,7 +29,7 @@
             <option value="" name="">Kategória</option>
 
             <?php
-            $kategorie = $database->select('cat', [ 'id', 'nazov']);
+            $kategorie = $database->select('cat', [ 'id', 'nazov'], [ 'user_id' => $logged_in->uid ]);
 
             foreach ( $kategorie as $name_kat ) {
 
@@ -40,10 +43,9 @@
           <!-- <input class="button" type="submit" value="Pridaj link">-->
         </form>
         <ul class="nav navbar-nav navbar-right">
-        <?php if ( logged_in() ) : $logged_in = get_user() ?>
           <li><?= plain( $logged_in->email ) ?></li>
         <li><a href="<?php echo "$base_url/logout.php" ?>" class="btn btn-default logout">logout</a></li>
-<?php endif ?>
+
           <?php
           /*
             if (logged_in()
@@ -62,10 +64,6 @@
   </nav>
 
 
-
-
-
-
   <div class="row">
     <div class="list-group list col-sm-3">
 
@@ -73,7 +71,7 @@
       <a class="list-group-item " href="<?php echo $base_url . '/index.php' ?>">Vsetko</a>
 
       <?php
-      $kategorie = $database->select('cat', [ 'id', 'nazov']);
+      $kategorie = $database->select('cat', [ 'id', 'nazov'], [ 'user_id' => $logged_in->uid ]);
 
       foreach ( $kategorie as $name_kat ) {
 
@@ -90,3 +88,4 @@
         </form>
       </div>
     </div>
+    <?php endif ?>
