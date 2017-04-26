@@ -11,8 +11,54 @@ html, body {
 
 body { padding-top: 70px; }
 
+.popisKat {
+	margin-top: 0;
+}
+
+.fa-info-circle {
+	margin-right: 5px;
+}
+.bezKat {
+	margin-top: 45.2px;
+	background-color: #df691a;
+}
+
+.ulKat {
+	list-style-type: none;
+	padding-left: 0px;
+	background-color: #4e5d6c;
+	margin-bottom: 0px;
+}
+
+.AKat {
+	width: 80%;
+	display: inline-block;
+}
+
+.AEDKat {
+	width: 8%;
+    display: inline-block;
+    padding: 9px 6px;
+    margin-bottom: -1px;
+    font-size: 17px;
+    margin: 0;
+    color: #ebebeb;
+}
+.AEDKat:hover {
+	color: #2b3e50;
+}
+.LiKat:hover {
+	background-color:  #485563;
+}
+
+.formKat {
+	width: 85%;
+}
+
+
 .btn {
 	background-color: #df691a;
+	padding: 9px 16px;
 }
 
 .select {
@@ -22,6 +68,13 @@ body { padding-top: 70px; }
 
 .new-cat {
 	padding: 8px 13px;
+	width: 100%!important;
+	display: inline-block;
+}
+
+.navbar-link {
+	   padding: 9.5px;
+    font-size: 14px;
 }
 
 
@@ -173,7 +226,10 @@ footer {
 	margin-bottom: -10px;
 }
 
-
+.error {
+	max-width: 380px;
+	margin: auto;
+}
 
 
 

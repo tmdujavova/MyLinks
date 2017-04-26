@@ -10,7 +10,9 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' )
 		$register = $auth->register( $email, $password, $password_repeat );
 
 		if($register['error']) {
-			echo '<div class="error">' .$register['message'].'</div>';
+			echo '<div class="alert alert-danger error" role="alert">
+			<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+  			' .$register['message'].'</div>';
 		} else {
 			//echo '<div class="sucees">' .$register['message'].'</div>';
 			header("Location: $base_url/login.php");

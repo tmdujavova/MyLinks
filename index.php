@@ -44,12 +44,12 @@ if ( ! logged_in() ) {
             ?>
 
           </select>
-          <button type="submit" class="btn btn-default" >Pridaj</button>
+          <button type="submit" class="btn btn-default" >Pridať</button>
 
           <!-- <input class="button" type="submit" value="Pridaj link">-->
         </form>
         <ul class="nav navbar-nav navbar-right">
-          <li><?= plain( $logged_in->email ) ?></li>
+          <li class="navbar-link"><?= plain( $logged_in->email ) ?></li>
         <li><a href="<?php echo "$base_url/logout.php" ?>" class="btn btn-default logout">Odhlásiť sa</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
@@ -60,20 +60,23 @@ if ( ! logged_in() ) {
   <div class="row">
     <div class="list-group list col-sm-3">
 
-      <h2>Kategória:</h2>
-      <a class="list-group-item " href="<?php echo $base_url . '/index.php' ?>">Všetko</a>
+      <h2 class="popisKat">Kategória:</h2>
+      <ul class="ulKat">
+      <li class="LiKat"><a class="list-group-item " href="<?php echo $base_url . '/index.php' ?>">Všetko</a></li>
 
       <?php
       $kategorie = $database->select('cat', [ 'id', 'nazov'], [ 'user_id' => $logged_in->uid ]);
 
       foreach ( $kategorie as $name_kat ) {
-        echo '<a class="list-group-item" href="'. $base_url .'/index.php?kategoria_id='. $name_kat['id'].'">'. $name_kat['nazov'].'</a>';
+        echo '<li class="LiKat"><a class="list-group-item AKat" href="'. $base_url .'/index.php?kategoria_id='. $name_kat['id'].'">'. $name_kat['nazov'].'</a><a href="#" class="edit-link AEDKat"><i class="fa fa-pencil" aria-hidden="true"></i></a>';
+        echo '      <a href="#" class="delete-link AEDKat"><i class="fa fa-trash" aria-hidden="true"></i></a></li>';
       }
       ?>
+      </ul>
 
       <div class="list-group-item">
         <form class="form-inline" id="add-cat" action="_inc/add-cat.php" method="post">
-          <div class="form-group">
+          <div class="form-group formKat">
             <input class="form-control new-cat" placeholder="Nová kategória" id="new-cat" type="text" name="new-cat">
           </div>
           <button type="submit" class="btn btn-default" >+</button>

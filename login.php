@@ -9,7 +9,9 @@ require_once '_inc/config.php';
 		$login = $auth->login( $username, $password, $remember );
 
 	if($login['error']) {
-			echo '<div class="error">' .$login['message'].'</div>';
+			echo '<div class="alert alert-danger error" role="alert">
+			<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+  			' .$login['message'].'</div>';
 		} else {
 			setcookie(
 			$auth_config->cookie_name,

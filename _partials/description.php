@@ -9,12 +9,7 @@ $data = $database->select('mylinks', [ 'id', 'nazov' , 'link'], ['user_id' => $l
 
 if ( ! $data )
 {
-            echo '<div id="desc-" class="panel panel-primary col-sm-8 description">
-        <h2 class="panel-heading"></h2>
-        <ul class="list-group descr">
-            <li class="list-group-item">Vytvor si kategóriu.</li>
-
-        </ul> </div>';
+            echo '<div class="bezKat alert alert-info col-sm-8" ><i class="fa fa-info-circle" aria-hidden="true"></i>Vytvor si kategóriu.</div>';
 }
 else {
 
