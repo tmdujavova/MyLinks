@@ -11,26 +11,18 @@ if ( ! isset($_GET['id']) )
 	show_404();
 }
 
-
-$nazov = $database->get('mylinks', "nazov", [
+$nazov = $database->get('cat', "nazov", [
 	"id" => $_GET['id']
 	]);
 
-$link = $database->get('mylinks', "link", [
-	"id" => $_GET['id']
-	]);
-
-if ( ! $nazov || ! $link )
+if ( ! $nazov )
 {
 	show_404();
 }
-
 if ( $_SERVER['REQUEST_METHOD'] === 'POST' )
 	{
-			// update item
-	$affected = $database->update('mylinks',
-		[ 'nazov' => $_POST['nazov'],
-		'link' => $_POST['link'] ],
+		$affected = $database->update('cat',
+		[ 'nazov' => $_POST['nazov'] ],
 		[ 'id' => $_POST['id'] ]
 	);
 
@@ -46,14 +38,8 @@ include_once "_partials/header.php"
 
 ?>
 
-
-
-
 <div >
-	<form class="navbar-form navbar-left form-inline" id="edit-form" action="_inc/edit-item.php"  method="post">
-		<div class="form-group">
-			<input class="form-control" value="<?php echo $link ?>" id="link" type="text" name="link" required>
-		</div>
+	<form class="navbar-form navbar-left form-inline" id="edit-form" action=""  method="post">
 		<div class="form-group">
 			<input class="form-control" value="<?php echo $nazov ?>" id="nazov" type="text" name="nazov" required>
 		</div>

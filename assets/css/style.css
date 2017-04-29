@@ -1,8 +1,12 @@
 /* CSS Document */
 html, body {
-	min-height: 100%;
+	height: 100%;
 	margin: 0;
 	padding: 0;
+}
+
+.container-fluid {
+    min-height: calc(100% - 50px);
 }
 
 * {
@@ -30,23 +34,8 @@ body { padding-top: 70px; }
 	margin-bottom: 0px;
 }
 
-.AKat {
-	width: 80%;
-	display: inline-block;
-}
 
-.AEDKat {
-	width: 8%;
-    display: inline-block;
-    padding: 9px 6px;
-    margin-bottom: -1px;
-    font-size: 17px;
-    margin: 0;
-    color: #ebebeb;
-}
-.AEDKat:hover {
-	color: #2b3e50;
-}
+
 .LiKat:hover {
 	background-color:  #485563;
 }
@@ -113,7 +102,7 @@ body { padding-top: 70px; }
 }
 
 footer {
-	color: #000;
+	color: #0f0f0f;
 	width: 100%;
 	text-align: center;
 	margin: 10px 0;
@@ -164,6 +153,18 @@ footer {
 
 .form-control {
 	box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.panel-heading .SPANCat a {
+	color: #ebebeb;
+	font-size: 28px;
+    margin-left: 1px;
+}
+.panel-heading .SPANCat a:hover {
+	color: #4e5d6c;
+}
+.panel-heading .SPANCat {
+	bottom: 0;
 }
 
 .box {

@@ -24,6 +24,20 @@ if ( ! $nazov || ! $link )
 	show_404();
 }
 
+if ( $_SERVER['REQUEST_METHOD'] === 'POST' )
+	{
+			// delete item
+	$affected = $database->delete('mylinks',
+		[ 'id' => $_POST['id'] ]
+	);
+
+	// success
+	if ( $affected ) {
+		header("Location: $base_url/index.php");
+		die();
+	}
+	}
+
 include_once "_partials/header.php"
 
 ?>

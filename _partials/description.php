@@ -33,16 +33,23 @@ else {
 </div>';}
 } else {
 
+
     $kategoria_id = $_GET['kategoria_id'];
 
-    $data = $database->select('mylinks', [ 'id', 'nazov' , 'link'], ["AND" => ['kategoria_id' => $kategoria_id, 'user_id' => $logged_in->uid ]]);
-    $nazov_kat = $database->get('cat', "nazov", ['id' => $kategoria_id ]);
+    $data = $database->select('mylinks', [ 'id', 'nazov' , 'link'], ["AND" => ['kategoria_id' => $kategoria_id, 'user_id' => $logged_in->uid ] ]);
+    $nazov_kat = $database->get('cat', "nazov", ["AND" => ['id' => $kategoria_id, 'user_id' => $logged_in->uid ] ]);
+
+    if ( ! $nazov_kat )
+{
+    show_404();
+} else {
 
 
     if ( ! $data )
     {
         echo '<div id="desc-'. $kategoria_id .'" class="panel panel-primary col-sm-8 description">
-        <h2 class="panel-heading">'. $nazov_kat .'</h2>
+        <h2 class="panel-heading">'. $nazov_kat .'<span class="controls pull-right SPANCat"><a href="edit-cat.php?id='. $kategoria_id .'" class="edit-link AEDKat"><i class="fa fa-pencil" aria-hidden="true"></i></a>';
+        echo '      <a href="delete-cat.php?id='. $kategoria_id .'" class="delete-link AEDKat"><i class="fa fa-trash" aria-hidden="true"></i></a></span></h2>
         <ul class="list-group descr">
             <li class="list-group-item">Nič si tu ešte nepridal. </li>
 
@@ -52,7 +59,8 @@ else {
 
 
         echo '<div id="desc-'. $kategoria_id .'" class="panel panel-primary col-sm-8 description">
-        <h2 class="panel-heading">'. $nazov_kat .'</h2>
+        <h2 class="panel-heading">'. $nazov_kat .'<span class="controls pull-right SPANCat"><a href="edit-cat.php?id='. $kategoria_id .'" class="edit-link AEDKat"><i class="fa fa-pencil" aria-hidden="true"></i></a>';
+        echo '      <a href="delete-cat.php?id='. $kategoria_id .'" class="delete-link AEDKat"><i class="fa fa-trash" aria-hidden="true"></i></a></span></h2>
         <ul class="list-group descr">';
 
             foreach ( $data as $item ) {
@@ -68,5 +76,6 @@ else {
             echo ' </ul> </div>';
         }
     }
+}
     ?>
 

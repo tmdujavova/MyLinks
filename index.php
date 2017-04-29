@@ -68,8 +68,8 @@ if ( ! logged_in() ) {
       $kategorie = $database->select('cat', [ 'id', 'nazov'], [ 'user_id' => $logged_in->uid ]);
 
       foreach ( $kategorie as $name_kat ) {
-        echo '<li class="LiKat"><a class="list-group-item AKat" href="'. $base_url .'/index.php?kategoria_id='. $name_kat['id'].'">'. $name_kat['nazov'].'</a><a href="#" class="edit-link AEDKat"><i class="fa fa-pencil" aria-hidden="true"></i></a>';
-        echo '      <a href="#" class="delete-link AEDKat"><i class="fa fa-trash" aria-hidden="true"></i></a></li>';
+
+        echo '<a class="list-group-item" href="'. $base_url .'/index.php?kategoria_id='. $name_kat['id'].'">'. $name_kat['nazov'].'</a>';
       }
       ?>
       </ul>
