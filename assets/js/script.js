@@ -32,8 +32,7 @@ var main = function() {
 		var inputKat = $('#kategoria').val(),
 		inputClass = $('#desc-'+inputKat+' .list-group'),
 		descAll = $('#desc-all .list-group');
-		console.log(inputClass);
-		console.log(descAll);
+
 
 		var req = $.ajax({
 			url: form.attr('action'),
@@ -60,6 +59,7 @@ var main = function() {
 
 					inputLink.val('');
 					inputText.val('');
+					window.location = baseURL;
 				});
 			}
 		});
@@ -78,6 +78,120 @@ var main = function() {
 			return false;
 		}
 	});
+
+
+var editlink = $('.descr .edit-link'),
+	deletelink = $('.descr .delete-link');
+
+
+  editlink.on('click', function(event) {
+	event.preventDefault();
+	var listli = $(this).parents('.list-group-item');
+
+	listli.attr('contenteditable','true').css({"background-color": "#aaaaaa", "color": "#df691a"});
+
+listli.on('keypress',function(event){
+if ( event.which === 13 ) {
+	$.ajax({
+		type:'POST',
+		url: baseURL+'/_inc/edit-item.php',
+		data:{
+			content: $(this).text(),
+			id:      $(this).children('div').attr('id')
+		},
+		success:function(msg){
+			if(!msg){
+				alert('update failure');
+			}
+		}
+	});
+	$(this).attr('contenteditable','false').css( "background-color", "#4e5d6c" );
+	//location.reload();
+}
+});
+
+});
+
+   deletelink.on('click', function(event) {
+	event.preventDefault();
+
+	var listli = $(this).parents('.list-group-item');
+
+	listli.css("background-color", "#c9302c" );
+
+	$.ajax({
+		type:'POST',
+		url: baseURL+'/_inc/delete-item.php',
+		data:{id: $(this).parent('div').attr('id')},
+		success:function(msg){
+			if(!msg){
+				alert('delete failure');
+			}
+		}
+	});
+	listli.hide();
+	//return confirm('Ste si istý?');
+});
+
+var editlinkCat = $('.panel-heading .edit-link'),
+	deletelinkCat = $('.panel-heading .delete-link');
+
+
+  editlinkCat.on('click', function(event) {
+	event.preventDefault();
+	var h2Cat = $(this).parents('.panel-heading');
+
+	h2Cat.attr('contenteditable','true').css({"background-color": "#aaaaaa", "color": "#df691a"});
+
+h2Cat.on('keypress',function(event){
+if ( event.which === 13 ) {
+	$.ajax({
+		type:'POST',
+		url: baseURL+'/_inc/edit-cat.php',
+		data:{
+			content: $(this).text(),
+			id:      $(this).children('span').attr('id')
+		},
+		success:function(msg){
+			if(!msg){
+				alert('update failure');
+			}
+		}
+	});
+
+	$(this).attr('contenteditable','false').css({"background-color": "#df691a", "color": "#ebebeb"});
+	//location.reload();
+}
+});
+
+});
+
+   deletelinkCat.on('click', function(event) {
+	event.preventDefault();
+
+	var h2Cat = $(this).parents('.panel-heading');
+
+	h2Cat.css("background-color", "#c9302c" );
+
+	$.ajax({
+		type:'POST',
+		url: baseURL+'/_inc/delete-cat.php',
+		data:{id: $(this).parent('span').attr('id')},
+		success:function(msg){
+			if(!msg){
+				alert('delete failure');
+			}
+		}
+	});
+	description.hide();
+	window.location = baseURL;
+	//return confirm('Ste si istý?');
+});
+
+
+
+	inputLink.select();
+
 };
 
 

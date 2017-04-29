@@ -83,6 +83,7 @@ body { padding-top: 70px; }
 .description .list-group-item {
 	border-bottom: 1px #2b3e50 dotted ;
 	margin-bottom: 1px;
+	color: #df691a;
 }
 
 .description .controls {

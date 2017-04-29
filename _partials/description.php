@@ -21,9 +21,9 @@ else {
     foreach ( $data as $item ) {
         echo '<li id="desc-all-'. $item['id'].'" class="list-group-item"><a href="'. $item['link'] .'">';
         echo    $item['nazov'] .'</a>' ;
-        echo '  <div class="controls pull-right">';
-        echo '      <a href="edit.php?id='. $item['id'] .'" class="edit-link"><i class="fa fa-pencil" aria-hidden="true"></i></a>';
-        echo '      <a href="delete.php?id='. $item['id'] .'" class="delete-link"><i class="fa fa-trash" aria-hidden="true"></i></a>';
+        echo '  <div id="'. $item['id'].'" class="controls pull-right">';
+        echo '      <a href="" class="edit-link"><i class="fa fa-pencil" aria-hidden="true"></i></a>';
+        echo '      <a href="" class="delete-link"><i class="fa fa-trash" aria-hidden="true"></i></a>';
         echo '  </div>';
 
         echo '</li>';
@@ -48,8 +48,8 @@ else {
     if ( ! $data )
     {
         echo '<div id="desc-'. $kategoria_id .'" class="panel panel-primary col-sm-8 description">
-        <h2 class="panel-heading">'. $nazov_kat .'<span class="controls pull-right SPANCat"><a href="edit-cat.php?id='. $kategoria_id .'" class="edit-link AEDKat"><i class="fa fa-pencil" aria-hidden="true"></i></a>';
-        echo '      <a href="delete-cat.php?id='. $kategoria_id .'" class="delete-link AEDKat"><i class="fa fa-trash" aria-hidden="true"></i></a></span></h2>
+        <h2 class="panel-heading">'. $nazov_kat .'<span id="'. $kategoria_id .'" class="controls pull-right SPANCat"><a href="" class="edit-link AEDKat"><i class="fa fa-pencil" aria-hidden="true"></i></a>';
+        echo '      <a href="" class="delete-link AEDKat"><i class="fa fa-trash" aria-hidden="true"></i></a></span></h2>
         <ul class="list-group descr">
             <li class="list-group-item">Nič si tu ešte nepridal. </li>
 
@@ -59,16 +59,16 @@ else {
 
 
         echo '<div id="desc-'. $kategoria_id .'" class="panel panel-primary col-sm-8 description">
-        <h2 class="panel-heading">'. $nazov_kat .'<span class="controls pull-right SPANCat"><a href="edit-cat.php?id='. $kategoria_id .'" class="edit-link AEDKat"><i class="fa fa-pencil" aria-hidden="true"></i></a>';
-        echo '      <a href="delete-cat.php?id='. $kategoria_id .'" class="delete-link AEDKat"><i class="fa fa-trash" aria-hidden="true"></i></a></span></h2>
+        <h2 class="panel-heading">'. $nazov_kat .'<span id="'. $kategoria_id .'" class="controls pull-right SPANCat"><a href="" class="edit-link AEDKat"><i class="fa fa-pencil" aria-hidden="true"></i></a>';
+        echo '      <a href="" class="delete-link AEDKat"><i class="fa fa-trash" aria-hidden="true"></i></a></span></h2>
         <ul class="list-group descr">';
 
             foreach ( $data as $item ) {
                 echo '<li id="desc'. $kategoria_id .'-'. $item['id'].'" class="list-group-item"><a href="'. $item['link'] .'">';
                 echo    $item['nazov'] .'</a>' ;
-                echo '  <div class="controls pull-right">';
-                echo '      <a href="edit.php?id='. $item['id'] .'" class="edit-link"><i class="fa fa-pencil" aria-hidden="true"></i></a>';
-                echo '      <a href="delete.php?id='. $item['id'] .'" class="delete-link"><i class="fa fa-trash" aria-hidden="true"></i></a>';
+                echo '  <div id="'. $item['id'].'" class="controls pull-right">';
+                echo '      <a href="" class="edit-link"><i class="fa fa-pencil" aria-hidden="true"></i></a>';
+                echo '      <a href="" class="delete-link"><i class="fa fa-trash" aria-hidden="true"></i></a>';
                 echo '  </div>';
 
                 echo '</li>';

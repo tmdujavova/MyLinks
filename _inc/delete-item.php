@@ -7,9 +7,8 @@
 		die();
 	}
 
-	// update item
-	$affected = $database->update('mylinks',
-		[ 'nazov' => $_POST['content'] ],
+
+	$affected = $database->delete('mylinks',
 		[ 'id' => $_POST['id'] ]
 	);
 
