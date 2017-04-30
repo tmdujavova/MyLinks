@@ -26,6 +26,18 @@ var main = function() {
 	inputText = $('#nazov');
 
 
+	/*inputText.hide();
+	$("input[name=title]").on("click", function(){
+		var selectedRadio = $("input[name=title]:checked").val();
+		if(selectedRadio == "myTitle"){
+			inputText.show();
+		} else if (selectedRadio == "Linktitle"){
+			inputText.hide();
+
+			var URLLink = inputLink.val();
+	}
+	});*/
+
 	form.on('submit', function(event) {
 		event.preventDefault();
 
@@ -59,8 +71,17 @@ var main = function() {
 
 					inputLink.val('');
 					inputText.val('');
-					window.location = baseURL;
+					//window.location = baseURL;
 				});
+			}
+
+			if (data.status === 'failure'){
+				$.ajax({ url: baseURL}).done(function(html){
+					return confirm('Zle vyplnený link (použite formát http:/...)');
+
+					//window.location = baseURL;
+				});
+
 			}
 		});
 	});

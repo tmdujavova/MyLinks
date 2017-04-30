@@ -9,9 +9,27 @@ if ( ! logged_in() ) {
 	else {
 
 	// add new stuff
+$link = filter_var( $_POST['link'], FILTER_VALIDATE_URL, FILTER_FLAG_PATH_REQUIRED);
+
+if ( $link === false) {
+	$message = json_encode ([
+		'status' => 'failure'
+		]);
+		//header("Location: $base_url/index.php");
+	die($message);
+}
+else {
+
+/*$titulok = $_POST['title'];
+
+if ( $titulok === 'myTitle') {
+	$nazov = $_POST['nazov'];
+} else if ( $titulok === 'Linktitle') {
+	$nazov = "Link z title";
+}*/
 
 $id = $database->insert('mylinks', [
-	'link' => $_POST['link'],
+	'link' => $link,
 	'nazov' => $_POST['nazov'],
 	'kategoria_id' => $_POST['kategoria'],
 	'user_id' => get_user()->uid
@@ -25,5 +43,6 @@ if ( $id ) {
 		]);
 		//header("Location: $base_url/index.php");
 	die($message);
+}
 }
 }

@@ -19,7 +19,7 @@ else {
  <ul class="list-group descr">';
 
     foreach ( $data as $item ) {
-        echo '<li id="desc-all-'. $item['id'].'" class="list-group-item"><a href="'. $item['link'] .'">';
+        echo '<li id="desc-all-'. $item['id'].'" class="list-group-item"><a href="'. $item['link'] .'" target="_blank">';
         echo    $item['nazov'] .'</a>' ;
         echo '  <div id="'. $item['id'].'" class="controls pull-right">';
         echo '      <a href="" class="edit-link"><i class="fa fa-pencil" aria-hidden="true"></i></a>';
@@ -64,7 +64,7 @@ else {
         <ul class="list-group descr">';
 
             foreach ( $data as $item ) {
-                echo '<li id="desc'. $kategoria_id .'-'. $item['id'].'" class="list-group-item"><a href="'. $item['link'] .'">';
+                echo '<li id="desc'. $kategoria_id .'-'. $item['id'].'" class="list-group-item"><a href="'. $item['link'] .'" target="_blank">';
                 echo    $item['nazov'] .'</a>' ;
                 echo '  <div id="'. $item['id'].'" class="controls pull-right">';
                 echo '      <a href="" class="edit-link"><i class="fa fa-pencil" aria-hidden="true"></i></a>';
