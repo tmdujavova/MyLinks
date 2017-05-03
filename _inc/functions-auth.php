@@ -17,8 +17,6 @@
 			$auth->checkSession($_COOKIE[$auth_config->cookie_name]);
 	}
 
-
-
 	/**
 	 * Do Login
 	 *

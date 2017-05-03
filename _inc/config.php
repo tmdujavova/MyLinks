@@ -35,7 +35,6 @@ $config = [
 
 ];
 
-
 $db = new PDO(
 	"{$config['db']['type']}:host={$config['db']['server']};
 	dbname={$config['db']['name']};charset={$config['db']['charset']}",

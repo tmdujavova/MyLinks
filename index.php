@@ -52,7 +52,7 @@ else {
               ?>
 
             </select>
-            <button type="submit" class="btn btn-default" >Pridať</button>
+            <button type="submit" class="btn btn-default pridaj" >Pridať</button>
 
             <!-- <input class="button" type="submit" value="Pridaj link">-->
           </form>
@@ -85,9 +85,9 @@ else {
         <div class="list-group-item">
           <form class="form-inline" id="add-cat" action="_inc/add-cat.php" method="post">
             <div class="form-group formKat">
-              <input class="form-control new-cat" placeholder="Nová kategória" id="new-cat" type="text" name="new-cat">
+              <input class="form-control new-cat" placeholder="Nová kategória" id="new-cat" type="text" name="new-cat" required>
             </div>
-            <button type="submit" class="btn btn-default" >+</button>
+            <button type="submit" class="btn btn-default pridajKat" >+</button>
           </form>
         </div>
       </div>
