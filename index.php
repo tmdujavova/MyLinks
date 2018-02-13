@@ -70,7 +70,7 @@ else {
 
         <h2 class="popisKat">Kategória:</h2>
         <ul class="ulKat">
-          <li class="LiKat"><a class="list-group-item " href="<?php echo $base_url . '/index.php' ?>">Všetko</a></li>
+          <li class="LiKat"><a class="list-group-item " href="<?php echo $base_url . '/index.php' ?>">Všetky linky</a></li>
 
           <?php
           $kategorie = $database->select('cat', [ 'id', 'nazov'], [ 'user_id' => $logged_in->uid ]);

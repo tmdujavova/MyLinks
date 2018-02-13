@@ -26,18 +26,6 @@ var main = function() {
 	inputText = $('#nazov');
 
 
-	/*inputText.hide();
-	$("input[name=title]").on("click", function(){
-		var selectedRadio = $("input[name=title]:checked").val();
-		if(selectedRadio == "myTitle"){
-			inputText.show();
-		} else if (selectedRadio == "Linktitle"){
-			inputText.hide();
-
-			var URLLink = inputLink.val();
-	}
-	});*/
-
 	form.on('submit', function(event) {
 		event.preventDefault();
 

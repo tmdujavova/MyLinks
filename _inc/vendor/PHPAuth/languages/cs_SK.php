@@ -1,12 +1,12 @@
 <?php
 $lang = array();
 
-$lang['user_blocked'] = "Váš účet je v súčasnosti zablokovaný.";
+$lang['user_blocked'] = "Tvoj účet je v súčasnosti zablokovaný.";
 $lang['user_verify_failed'] = "Ověření kódu captcha selhalo.";
 
-$lang['email_password_invalid'] = "Neplatná e-mailová adresa alebo heslo.";
+$lang['email_password_invalid'] = "Nesprávna e-mailová adresa alebo heslo.";
 $lang['email_password_incorrect'] = "Nesprávna e-mailová adresa alebo heslo.";
-$lang['remember_me_invalid'] = "Neplatná hodnota políčka zapamätať si ma.";
+$lang['remember_me_invalid'] = "Nesprávna hodnota políčka zapamätať si ma.";
 
 $lang['password_short'] = "Heslo je príliš krátke.";
 $lang['password_weak'] = "Heslo je príliš slabé.";
@@ -15,10 +15,10 @@ $lang['password_changed'] = "Heslo úspešne zmenené.";
 $lang['password_incorrect'] = "Súčasné heslo je nesprávne.";
 $lang['password_notvalid'] = "Heslo je neplatné.";
 
-$lang['newpassword_short'] = "Nové heslo je príliš krátkw.";
+$lang['newpassword_short'] = "Nové heslo je príliš krátke.";
 $lang['newpassword_long'] = "Nové heslo je príliš dlhé.";
 $lang['newpassword_invalid'] = "Nové heslo musí obsahovať aspoň jedno veľké písmeno, aspoň jedno malé písmeno a aspoň jednu číslicu.";
-$lang['newpassword_nomatch'] = "Nová hesla nie sú zhodné.nejsou shodná.";
+$lang['newpassword_nomatch'] = "Nová hesla nie sú zhodné.";
 $lang['newpassword_match'] = "Nové heslo je rovnaké ako staré heslo.";
 
 $lang['email_short'] = "E-mailová adresa je príliš krátka.";

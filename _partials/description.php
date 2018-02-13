@@ -9,13 +9,13 @@ $data = $database->select('mylinks', [ 'id', 'nazov' , 'link'], ['user_id' => $l
 
 if ( ! $data )
 {
-            echo '<div class="bezKat alert alert-info col-sm-8" ><i class="fa fa-info-circle" aria-hidden="true"></i>Vytvor si kategóriu.</div>';
+            echo '<div class="bezKat alert alert-info col-sm-8" ><i class="fa fa-info-circle" aria-hidden="true"></i>Vytvor si kategóriu a pridaj link.</div>';
 }
 else {
 
 
  echo '<div id="desc-all" class="panel panel-primary col-sm-8 description">
- <h2 class="panel-heading">Všetko</h2>
+ <h2 class="panel-heading">Všetky linky</h2>
  <ul class="list-group descr">';
 
     foreach ( $data as $item ) {

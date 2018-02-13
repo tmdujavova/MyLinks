@@ -8,7 +8,7 @@ if ( ! logged_in() ) {
 	}
 	else {
 
-	// add new stuff
+	// add new
 $link = filter_var( $_POST['link'], FILTER_VALIDATE_URL, FILTER_FLAG_PATH_REQUIRED);
 
 if ( $link === false) {
@@ -19,14 +19,6 @@ if ( $link === false) {
 	die($message);
 }
 else {
-
-/*$titulok = $_POST['title'];
-
-if ( $titulok === 'myTitle') {
-	$nazov = $_POST['nazov'];
-} else if ( $titulok === 'Linktitle') {
-	$nazov = "Link z title";
-}*/
 
 $id = $database->insert('mylinks', [
 	'link' => $link,

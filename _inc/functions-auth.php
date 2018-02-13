@@ -92,31 +92,3 @@
 	{
 		return htmlspecialchars( $str, ENT_QUOTES );
 	}
-
-
-	/**
-	 * Can Edit
-	 *
-	 * True if this post was written by the logged in user
-	 *
-	 * @param  mixed  $post
-	 * @return bool
-
-	function can_edit( $post )
-	{
-		// must be logged in
-		if ( ! logged_in() ) {
-			return false;
-		}
-
-		if ( is_object( $post ) ) {
-			$post_id = (int) $post->user_id;
-		}
-		else {
-			$post_id = (int) $post['user_id'];
-		}
-
-		$user = get_user();
-
-		return $post_id === $user->uid;
-	} */
